@@ -12,7 +12,6 @@ type MenuSelected = {
 const MenuSelectedContext = createContext<MenuSelected>({
   selectedMenu: {},
 });
-
 // Додайте тип MenuAction
 type MenuAction = {
   onSelectedMenu: (menu: { id: MenuIds }) => void;
