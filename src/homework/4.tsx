@@ -4,14 +4,18 @@ import noop from "lodash/noop";
 type MenuIds = "first" | "second" | "last";
 type Menu = { id: MenuIds; title: string };
 
-// Додати тип Menu Selected
 type SelectedMenu = {
-  id: MenuIds;
+  id : MenuIds;
+};
+// Додати тип Menu Selected
+type MenuSelected = {
+  selectedMenu: SelectedMenu;
 };
 
-const MenuSelectedContext = createContext({
+const MenuSelectedContext = createContext<MenuSelected>({
   selectedMenu: {} as SelectedMenu,
-});
+})
+
 // Додайте тип MenuAction
 type MenuAction = {
   onSelectedMenu: (selectedMenu: SelectedMenu ) => void;
